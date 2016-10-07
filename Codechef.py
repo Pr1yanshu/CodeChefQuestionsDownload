@@ -37,11 +37,9 @@ options = {
 }
 Editorial = "http://discuss.codechef.com/problems/"
 response = urllib2.urlopen('https://www.codechef.com/problems/'+difficulty)
-
-data =response.read()
 start="https://www.codechef.com"
 j=0
-soup = BeautifulSoup(data)
+soup = BeautifulSoup(response,'html.parser')
 
 # Gets question code
 for link in soup.find_all('tr', class_="problemrow"):
